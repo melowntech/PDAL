@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='pdal'>
+
+  <refmeta>
+    <refentrytitle>pdal</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>pdal</refname>
+    <refpurpose>PDAL application</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>pdal</command>
+      <arg choice='plain'>&lt;<replaceable>options</replaceable>&gt;</arg>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>pdal</command>
+      <arg choice='plain'>&lt;<replaceable>command</replaceable>&gt;</arg>
+      <arg choice='plain'>&lt;<replaceable>command options</replaceable>&gt;</arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      PDAL contains consists of a single application, called
+      <command>pdal</command>.
+      The <command>pdal</command> application currently has the following
+      subcommands:
+      <itemizedlist>
+        <listitem>
+          <para>delta</para>
+        </listitem>
+        <listitem>
+          <para>density</para>
+        </listitem>
+        <listitem>
+          <para>diff</para>
+        </listitem>
+        <listitem>
+          <para>ground</para>
+        </listitem>
+        <listitem>
+          <para>info</para>
+        </listitem>
+        <listitem>
+          <para>merge</para>
+        </listitem>
+        <listitem>
+          <para>pcl</para>
+        </listitem>
+        <listitem>
+          <para>pipeline</para>
+        </listitem>
+        <listitem>
+          <para>random</para>
+        </listitem>
+        <listitem>
+          <para>split</para>
+        </listitem>
+        <listitem>
+          <para>tindex</para>
+        </listitem>
+        <listitem>
+          <para>translate</para>
+        </listitem>
+        <listitem>
+          <para>view</para>
+        </listitem>
+      </itemizedlist>
+    </para>
+    <para>
+      Applications are run by invoking the <command>pdal</command> application
+      along with the command name:
+      <screen>
+$ <command>pdal info</command> <filename>myfile.las</filename>
+$ <command>pdal translate</command> <filename>input.las</filename> <filename>output.las</filename>
+$ <command>pdal pipeline</command> <option>--stdin</option> &lt; <filename>myxml.xml</filename>
+      </screen>
+    </para>
+    <para>
+      Help for each command can be retrieved via the <option>--help</option>
+      switch.
+      The <option>--drivers</option> and <option>--options</option> switches
+      can tell you more about particular drivers and their options:
+      <screen>
+$ <command>pdal info</command> <option>--help</option>
+$ <command>pdal translate</command> <option>--drivers</option>
+$ <command>pdal pipeline</command> <option>--options</option> <filename>writers.las</filename>
+      </screen>
+    </para>
+    <para>
+      Additional driver-specific options may be specified by using a
+      namespace-prefixed option name.
+      For example, it is possible to set the LAS day of year at translation
+      time with the following option:
+      <screen>
+$ <command>pdal translate</command> \
+    <option>--writers.las.creation_doy</option>="<replaceable>42</replaceable>" \
+    <filename>input.las</filename> \
+    <filename>output.las</filename>
+      </screen>
+    </para>
+    <note>
+      Driver specific options can be identified using the
+      <command>pdal info</command> <option>--options</option> invocation.
+    </note>
+    <para>
+      See
+      <ulink url="http://pdal.io/apps.html">http://pdal.io/apps.html</ulink>
+      for more detail.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>--debug</option></term>
+        <listitem>
+          <para>
+            Sets the output level to 3 (option deprecated)
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-v</option></term>
+        <term><option>--verbose</option></term>
+        <listitem>
+          <para>
+            Sets the output level (0-8)
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--drivers</option></term>
+        <listitem>
+          <para>
+            List available drivers
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>-h</option></term>
+        <term><option>--help</option></term>
+        <listitem>
+          <para>
+            Display help text
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--list-commands</option></term>
+        <listitem>
+          <para>
+            List available commands
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--version</option></term>
+        <listitem>
+          <para>
+            Show program version
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--options</option>=&lt;<replaceable>driver name</replaceable>&gt;</term>
+        <listitem>
+          <para>
+            Show options for specified driver (or 'all')
+          </para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+  </refsect1>
+
+</refentry>

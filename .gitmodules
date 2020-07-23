@@ -1,0 +1,6 @@
+[submodule "externals/buildsys/common"]
+	path = externals/buildsys/common
+	url = git@github.com:melowntech/buildsys-common.git
+[submodule "PDAL/src"]
+	path = PDAL/src
+	url = git@github.com:PDAL/PDAL.git

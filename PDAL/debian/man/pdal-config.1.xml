@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id='pdal-config'>
+
+  <refmeta>
+    <refentrytitle>pdal-config</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>pdal-config</refname>
+    <refpurpose>query PDAL build options</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv id='synopsis'>
+    <cmdsynopsis>
+      <command>pdal-config</command>
+      <arg choice='opt'><option>--cflags</option></arg>
+      <arg choice='opt'><option>--cxxflags</option></arg>
+      <arg choice='opt'><option>--defines</option></arg>
+      <arg choice='opt'><option>--includes</option></arg>
+      <arg choice='opt'><option>--libs</option></arg>
+      <arg choice='opt'><option>--plugin-dir</option></arg>
+      <arg choice='opt'><option>--version</option></arg>
+      <arg choice='opt'><option>--python-version</option></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1 id='description'>
+    <title>DESCRIPTION</title>
+    <para>
+      <command>pdal-config</command> allows querying the options used to
+      build the PDAL library.
+    </para>
+  </refsect1>
+
+  <refsect1 id='options'>
+    <title>OPTIONS</title>
+    <variablelist>
+
+      <varlistentry>
+        <term><option>--cflags</option></term>
+        <listitem>
+          <para>Compiler flags</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--cxxlibs</option></term>
+        <listitem>
+          <para>C++ Compiler flags</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--defines</option></term>
+        <listitem>
+          <para>Compiler defines</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--includes</option></term>
+        <listitem>
+          <para>Compiler includes</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--libs</option></term>
+        <listitem>
+          <para>Libraries</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--plugin-dir</option></term>
+        <listitem>
+          <para>Plugin directory</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--version</option></term>
+        <listitem>
+          <para>Library version</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--python-version</option></term>
+        <listitem>
+          <para>Python version</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+  </refsect1>
+
+</refentry>

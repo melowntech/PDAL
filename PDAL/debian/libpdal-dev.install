@@ -1,0 +1,8 @@
+usr/bin/pdal-config
+usr/include
+#usr/lib/lib*.a
+usr/lib/libpdalcpp.so
+usr/lib/libpdal_base.so
+usr/lib/libpdal_util.so
+usr/lib/pkgconfig
+usr/lib/pdal/cmake

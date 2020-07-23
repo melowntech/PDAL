@@ -1,0 +1,282 @@
+Source: pdal
+Section: science
+Priority: optional
+Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
+Uploaders: Bas Couwenberg <sebastic@debian.org>
+Build-Depends: debhelper (>= 9),
+               dh-python,
+               autotools-dev,
+               bash-completion,
+               chrpath,
+               cmake (>= 3.0),
+               libboost-filesystem-dev,
+               libboost-iostreams-dev,
+               libboost-program-options-dev,
+               libboost-system-dev,
+               libboost-thread-dev,
+               libgdal-dev,
+               libgeos++-dev,
+               libgeotiff-dev,
+               libhdf5-dev,
+               libjs-mathjax,
+               libjsoncpp-dev,
+               libpq-dev,
+               libproj-dev,
+               libspatialite-dev,
+               libsqlite3-dev,
+               libsqlite3-mod-spatialite,
+               libwebsocketpp-dev,
+               libxml2-dev,
+               python-all-dev,
+               python-breathe,
+               python-numpy,
+               rst2pdf,
+               zlib1g-dev,
+               docbook2x,
+               docbook-xsl,
+               docbook-xml,
+               xsltproc
+Standards-Version: 4.1.1
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-grass/pdal.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-grass/pdal.git
+Homepage: http://pdal.io/
+
+Package: pdal
+Architecture: any
+Multi-Arch: same
+Section: utils
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Suggests: pdal-doc
+Description: Point Data Abstraction Library
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the PDAL utilities.
+
+Package: libpdal-base5
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Recommends: libpdal-plugins
+Description: Point Data Abstraction Library - libpdal_base
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the libpdal_base shared library.
+
+Package: libpdal-util5
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Point Data Abstraction Library - libpdal_util
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the libpdal_util shared library.
+
+Package: libpdal-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libpdal-base5 (= ${binary:Version}),
+         libpdal-util5 (= ${binary:Version}),
+         libboost-filesystem-dev,
+         libboost-iostreams-dev,
+         libboost-program-options-dev,
+         libboost-system-dev,
+         libboost-thread-dev,
+         libgdal-dev,
+         libgeos++-dev,
+         libgeotiff-dev,
+         libproj-dev,
+         libxml2-dev,
+         ${misc:Depends}
+Description: Point Data Abstraction Library - development files
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the PDAL development files.
+
+Package: libpdal-plugins
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: libpdal-plugin-greyhound (= ${binary:Version}),
+         libpdal-plugin-icebridge (= ${binary:Version}),
+         libpdal-plugin-pgpointcloud (= ${binary:Version}),
+         libpdal-plugin-python (= ${binary:Version}),
+         libpdal-plugin-sqlite (= ${binary:Version}),
+         ${misc:Depends}
+Description: Point Data Abstraction Library - plugins
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This metapackage depends on the individual PDAL plugin packages.
+
+Package: libpdal-plugin-greyhound
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Point Data Abstraction Library - Greyhound plugin
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the Greyhound plugin.
+
+Package: libpdal-plugin-icebridge
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Point Data Abstraction Library - Icebridge plugin
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the Icebridge plugin.
+
+Package: libpdal-plugin-pgpointcloud
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: Point Data Abstraction Library - PostgreSQL PointCloud plugin
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the PostgreSQL PointCloud plugin.
+
+Package: libpdal-plugin-python
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${python:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Point Data Abstraction Library - Python plugin
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the Python plugin.
+
+Package: libpdal-plugin-sqlite
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: libsqlite3-mod-spatialite,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Point Data Abstraction Library - SQLite plugin
+ PDAL is a BSD licensed library for translating and manipulating point
+ cloud data of various formats. PDAL can be used to read, write and
+ translate point cloud data in many formats. Support is included for
+ input files of LAS, LAZ, SBET, BPF, QFIT and others. PDAL can also read
+ from and write to databases that support point cloud storage, including
+ Oracle, Postgres and SQLite.
+ .
+ PDAL should not be confused with PCL (Point Cloud Library). PCL is a
+ library specifically designed to provide algorithmic analysis and
+ modification of point clouds. PDAL provides a limited interface to the
+ facilities of PCL, but does not in general attempt to duplicate its
+ capabilities.
+ .
+ This package contains the SQLite plugin.
+

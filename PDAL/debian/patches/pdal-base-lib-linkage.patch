@@ -1,0 +1,12 @@
+Fixed PDAL base lib linkage, added (dl, curl).
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -281,6 +281,8 @@
+         ${PDAL_ARBITER_LIB_NAME}
+         ${PDAL_KAZHDAN_LIB_NAME}
+         ${PDAL_JSONCPP_LIB_NAME}
++        "dl"
++        "curl"
+     INTERFACE
+         ${PDAL_LIBDIR}
+ )

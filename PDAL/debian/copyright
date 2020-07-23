@@ -1,0 +1,1161 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: PDAL
+Upstream-Contact: Hobu, Inc. <howard@hobu.co>
+Source: http://download.osgeo.org/pdal/
+
+Files: *
+Copyright: 2014-2017, Hobu, Inc. <howard@hobu.co>
+           2011-2017, Bradley J Chambers <brad.chambers@gmail.com>
+           2014-2017, Peter J. Gadomski <pete.gadomski@gmail.com>
+                2017, Jason Beverage <jasonbeverage@gmail.com>
+           2014-2016, RadiantBlue Technologies, Inc
+          2014, 2016, Connor Manning <connor@hobu.co>
+           2009-2016, Howard Butler <hobu.inc@gmail.com>
+                2015, James W. O'Meara <james.w.omeara@gmail.com>
+     2010, 2013-2014, Andrew Bell
+     2011-2012, 2014, Michael P. Gerlek <mpg@flaxen.com>
+                2013, Paul Ramsey <pramsey@cleverelephant.ca>
+           2009-2012, Willow Garage, Inc
+                2012, Open Perception, Inc
+                2011, Michael S. Rosen <michael.rosen@gmail.com>
+                2010, Frank Warmerdam
+                2008, Mateusz Loskot
+                2008, Phil Vachon
+           1996-1997, Theodore Ts'o
+                      Mathias Panzenböck
+License: BSD-3-Clause
+
+Files: doc/tutorial/pcl_spec.rst
+Copyright: 2014, RadiantBlue Technologies, Inc.
+License: CC-BY-3.0-US
+
+Files: java/core-scala/src/main/scala/io/pdal/pipeline/*
+Copyright: 2017, Azavea
+License: Apache-2.0
+
+Files: plugins/python/plang/Redirector.hpp
+ plugins/python/plang/Redirector.cpp
+Copyright: 2011, Mateusz Loskot <mateusz@loskot.net>
+License: BSL-1.0
+
+Files: plugins/hexbin/kernel/OGR.cpp
+Copyright: 2013, Hobu, Inc. <hobu.inc@gmail.com>
+License: LGPL-2.1+
+
+Files: plugins/nitf/io/nitflib.h
+Copyright: 2002, Frank Warmerdam
+License: Expat
+
+Files: plugins/oci/io/OciWrapper.cpp
+ plugins/oci/io/OciWrapper.h
+Copyright: 2008, Ivan Lucena
+License: Expat
+
+Files: vendor/arbiter/*
+Copyright: 2015, Connor Manning
+License: Expat
+
+Files: vendor/eigen/*
+Copyright: 2008-2013, Gael Guennebaud <gael.guennebaud@inria.fr>
+           2010-2012, Jitse Niesen <jitse@maths.leeds.ac.uk>
+                2012, Alexey Korepanov <kaikaikai@yandex.ru>
+           2012-2013, Désiré Nuentsa-Wakam <desire.nuentsa_wakam@inria.fr>
+           2006-2011, Benoit Jacob <jacob.benoit.1@gmail.com>
+          2001, 2011, Intel Corporation.
+                2011, Timothy E. Holy <tim.holy@gmail.com>
+           2009-2010, Hauke Heibel <hauke.heibel@googlemail.com>
+                2010, Daniel Lowengrub <lowdanie@gmail.com>
+          2008, 2010, Konstantinos Margaritis <markos@codex.gr>
+                2010, Thomas Capricelli <orzel@freehackers.org>
+                2010, Vincent Lejeune
+                2009, Claire Maurice
+                2009, Rohit Garg <rpg.314@gmail.com>
+                2009, Keir Mierle <mierle@gmail.com>
+                2009, Kenneth Riddile <kfriddile@yahoo.com>
+                2009, Mathieu Gautier <mathieu.gautier@cea.fr>
+                2009, Ricard Marxer <email@ricardmarxer.com>
+                2007, Julien Pommier
+                2007, Michael Olbrich <michael.olbrich@gmx.net>
+           1998-2003, University of Florida
+                1994, Xerox Corporation.
+License: MPL-2.0
+
+Files: vendor/eigen/Eigen/src/Cholesky/LLT_MKL.h
+ vendor/eigen/Eigen/src/Core/Assign_MKL.h
+ vendor/eigen/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_MKL.h
+ vendor/eigen/Eigen/src/Core/products/GeneralMatrixMatrix_MKL.h
+ vendor/eigen/Eigen/src/Core/products/GeneralMatrixVector_MKL.h
+ vendor/eigen/Eigen/src/Core/products/SelfadjointMatrixMatrix_MKL.h
+ vendor/eigen/Eigen/src/Core/products/SelfadjointMatrixVector_MKL.h
+ vendor/eigen/Eigen/src/Core/products/TriangularMatrixMatrix_MKL.h
+ vendor/eigen/Eigen/src/Core/products/TriangularMatrixVector_MKL.h
+ vendor/eigen/Eigen/src/Core/products/TriangularSolverMatrix_MKL.h
+ vendor/eigen/Eigen/src/Core/util/MKL_support.h
+ vendor/eigen/Eigen/src/Eigenvalues/ComplexSchur_MKL.h
+ vendor/eigen/Eigen/src/Eigenvalues/RealSchur_MKL.h
+ vendor/eigen/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_MKL.h
+ vendor/eigen/Eigen/src/LU/PartialPivLU_MKL.h
+ vendor/eigen/Eigen/src/PardisoSupport/PardisoSupport.h
+ vendor/eigen/Eigen/src/QR/ColPivHouseholderQR_MKL.h
+ vendor/eigen/Eigen/src/QR/HouseholderQR_MKL.h
+ vendor/eigen/Eigen/src/SVD/JacobiSVD_MKL.h
+Copyright: 2011, Intel Corporation
+License: BSD-3-Clause
+
+Files: vendor/eigen/Eigen/src/LU/arch/Inverse_SSE.h
+Copyright: 2001, Intel Corporation
+           2009, Benoit Jacob <jacob.benoit.1@gmail.com>
+           2010, Gael Guennebaud <gael.guennebaud@inria.fr>
+Comment:
+ The SSE code for the 4x4 float and double matrix inverse in this file
+ comes from the following Intel's library:
+ http://software.intel.com/en-us/articles/optimized-matrix-library-for-use-with-the-intel-pentiumr-4-processors-sse2-instructions/
+ .
+ Here is the respective copyright and license statement:
+ .
+   Copyright (c) 2001 Intel Corporation.
+ .
+ Permition is granted to use, copy, distribute and prepare derivative works
+ of this library for any purpose and without fee, provided, that the above
+ copyright notice and this statement appear in all copies.
+ Intel makes no representations about the suitability of this software for
+ any purpose, and specifically disclaims all warranties.
+ See LEGAL.TXT for all the legal information.
+License: MPL-2.0
+
+Files: vendor/eigen/Eigen/src/OrderingMethods/Amd.h
+Copyright: 2006, Timothy A. Davis
+           2010, Gael Guennebaud <gael.guennebaud@inria.fr>
+License: LGPL-2.1+
+
+Files: vendor/eigen/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h
+Copyright: 2005, Timothy A. Davis.
+      2008-2012, Gael Guennebaud <gael.guennebaud@inria.fr>
+License: LGPL-2.1+
+
+Files: vendor/gtest/*
+Copyright: 2003, 2005-2010, 2013, Google Inc
+License: BSD-3-Clause
+
+Files: vendor/jsoncpp/*
+Copyright: 2007-2010, Baptiste Lepilleur
+License: JSONCPP
+
+Files: vendor/kazhdan/*
+Copyright:            2017, Andrew Bell
+     2006-2007, 2011, 2013, Michael Kazhdan
+                      2011, Ming Chuang
+                      2006, Matthew Bolitho
+License: Kazhdan
+ Redistribution and use in source and binary forms, with or without modification,
+ are permitted provided that the following conditions are met:
+ .
+ Redistributions of source code must retain the above copyright notice, this list of
+ conditions and the following disclaimer. Redistributions in binary form must reproduce
+ the above copyright notice, this list of conditions and the following disclaimer
+ in the documentation and/or other materials provided with the distribution.
+ .
+ Neither the name of the Johns Hopkins University nor the names of its contributors
+ may be used to endorse or promote products derived from this software without specific
+ prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+ EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+ SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ TO, PROCUREMENT OF SUBSTITUTE  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+
+Files: vendor/kazhdan/Ply.h
+Copyright: 1994, The Board of Trustees of The Leland Stanford Junior University.
+License: Ply
+ Permission to use, copy, modify and distribute this software and its
+ documentation for any purpose is hereby granted without fee, provided
+ that the above copyright notice and this permission notice appear in
+ all copies of this software and that you do not sell the software.
+ .
+  THE SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY
+  WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Files: vendor/nanoflann/*
+Copyright: 2008-2009, David G. Lowe <lowe@cs.ubc.ca>.
+           2008-2009, Marius Muja <mariusm@cs.ubc.ca>.
+           2011-2013, Jose Luis Blanco <joseluisblancoc@gmail.com>
+License: BSD-2-Clause
+
+Files: vendor/pdalboost/*
+Copyright:              1998-1999, Greg Colvin
+                        1999-2000, Jaakko Jarvi (jaakko.jarvi@cs.utu.fi)
+                             2001, Adobe Systems Inc
+                             2001, Dietmar Kuehl
+                             2001, Jesse Jones
+                             2001, John R. Bandela
+                             2001, Lie-Quan Lee
+                             2001, Mat Marcus
+                             2001, Nicolai M. Josuttis
+                             2001, Ronald Garcia, Indiana University (garcia@osl.iu.edu)
+                        1999-2002, Jeremy Siek
+                        2001-2002, Bill Kempf
+                        2001-2002, Darin Adler
+                             2002, Brad King (brad.king@kitware.com)
+                             2002, Craig Henderson
+                             2002, Jan Langer
+                             2002, Jeff Garland
+                             2002, Thomas Witt
+                        1999-2003, Aleksey Gurtovoy
+                        2001-2003, Toon Knapen
+                        2002-2003, Eric Friedman
+                        2002-2003, Guillaume Melquiond
+                        2002-2003, The Trustees of Indiana University
+                             2003, Christof Meerwald
+                             2003, Dan Watkins
+                             2003, Jaap Suter
+                             2003, Martin Wille
+                             2003, Samuel Krempp
+                             2003, Synge Todo
+                             2003, Vesa Karvonen
+                        2002-2004, Vladimir Prus
+                        2003-2004, Pavel Vozenilek
+                             2004, Aaron W. LaFramboise
+                             2004, Bertolt Mildner
+                             2004, Jonathan Graehl
+                             2004, Michael Glassford
+                             2004, Stefan Slapeta
+                        1999-2005, Kevlin Henney
+                        2000-2005, Steve Cleary
+                  2002-2003, 2005, Markus Schoepflin
+                        2003-2005, Rani Sharoni
+                             2005, Ben Hutchings
+                             2005, Jim Douglas
+                             2005, Matthew Calabrese
+                  2000-2003, 2006, Jens Maurer
+                        2001-2006, Pavol Droba
+                             2006, Michael van der Westhuizen
+                             2006, Piotr Wyderski
+                             2006, Tomas Puverle
+                        2002-2007, CrystalClear Software, Inc
+                        2003-2007, Jonathan Turkanis
+                       2004, 2007, Roland Schwarz
+                        2005-2007, Matthias Troyer
+                        2006-2007, Boris Gubenko
+                             2007, Alexey Baskakov
+                             2007, Baruch Zilber
+                             2007, David Deakins
+                             2007, Frank Birbacher
+                             2007, Noel Belcourt
+                        2000-2008, Aleksey Gurtovoy
+                  2000-2005, 2008, Fernando Luis Cacciola Carballal
+                  2000-2005, 2008, Howard Hinnant
+                        2003-2008, Thorsten Ottosen
+                  2003-2004, 2008, Gennaro Prota
+                        2006-2008, Johan Rade
+                        2007-2008, CodeRage, LLC (turkanis at coderage dot com)
+                        2007-2008, Joseph Gauterin
+                        2007-2008, Niels Dekker
+                             2008, Jorge Lodos
+                             2008, Runar Undheim
+                  1999-2006, 2009, David Abrahams
+                  2002-2007, 2009, Marcin Kalicinski
+                       2003, 2009, Daniel Frey
+                             2009, Arno Schoedl
+                             2009, Dustin Spicuzza
+                             2009, Yuriy Krasnoschek
+                             2009, Pablo Halpern
+                             2009, Sascha Ochsenknecht
+                             2009, Spirent Communications, Inc
+            2001-2006, 2008, 2010, Douglas Gregor
+                        2002-2010, Robert Ramey - http://www.rrsd.com
+                        2003-2010, Christopher M. Kohlhoff (chris at kohlhoff dot com)
+                        2005-2010, Alexander Nasonov
+                             2010, Artyom Beilis
+                             2010, Eric Jourdanneau
+                             2010, Ilya Murav'jov
+                  2001, 2005-2011, Gennadiy Rozental
+                        2002-2011, Paul Mensonides
+                  2006-2007, 2011, Paul A. Bristow
+                        2007-2011, Andy Tompkins
+                        2007-2011, Steven Watanabe
+                        2009-2011, Frederic Bron
+                        2009-2011, Robert Stewart
+                        2009-2011, Roman Perepelitsa
+                       2009, 2011, Helge Bahmann
+                        2010-2011, Bryce Lelbach
+                             2011, Christopher Jefferson
+             1999-2003, 2006-2012, Daniel Walker
+                  1999-2005, 2012, Daryle Walker
+                  2007-2008, 2012, Anthony Williams
+                        2008-2012, Marshall Clow
+                        2008-2012, Michel Morin
+                        2009-2012, Lorenzo Caminiti
+                             2012, Boris Schaeling
+                             2012, Duncan Exon Smith
+                             2012, Hartmut Kaiser
+                             2012, IBM Corp
+                             2012, Leo Goodstadt
+                        2006-2013, Emil Dotchevski and Reverge Studios, Inc
+                        2009-2013, Vicente J. Botet Escriba
+                        2012-2013, Tim Blechmann
+                             2013, Cray, Inc.
+       2004-2005, 2008-2012, 2014, Eric Niebler
+                        2005-2014, Daniel James
+       2003-2004, 2006-2010, 2014, Neil Groves
+                        2012-2014, Glen Joseph Fernandes
+                             2014, Adam Wulkiewicz, Lodz, Poland
+                             2014, Agustin Berge
+                             2014, Franz Detro
+                             2014, Jessica Hamilton
+                             2014, Microsoft Corporation
+                             2014, iamvfx@gmail.com
+                        1994-2015, Beman Dawes
+ 1999-2008, 2010-2011, 2013, 2015, John Maddock
+                        2001-2015, Peter Dimov
+                        2002-2015, Joaquin M Lopez Munoz
+                        2005-2015, Ion Gaztanaga
+                        2007-2015, Andrey Semashev
+                        2008-2015, Rene Rivera
+            2009-2010, 2013, 2015, Sebastian Redl
+                       2010, 2015, Joel Falcou
+                        2011-2015, Antony Polukhin
+                  2011, 2013-2015, Edward Diener
+                        2014-2015, Andrzej Krzemienski
+                             2015, Bruno Dutra
+                             2015, Charly Chevalier
+                             2015, Nuxi, https://nuxi.nl/
+License: BSL-1.0
+
+Files: vendor/pdalboost/boost/archive/impl/basic_xml_grammar.hpp
+Copyright: 2001, Daniel C. Nuffer
+           2002, Robert Ramey - http://www.rrsd.com
+License: BSL-1.0 and Zlib
+
+Files: vendor/pdalboost/boost/function/detail/gen_maybe_include.pl
+Copyright: 2001-2003, Douglas Gregor (gregod@cs.rpi.edu)
+License: Boost-Douglas-Gregor
+ Permission to copy, use, sell and distribute this software is granted
+ provided this copyright notice appears in all copies.
+ Permission to modify the code and to distribute modified code is granted
+ provided this copyright notice appears in all copies, and a notice
+ that the code was modified is included with the copyright notice.
+ .
+ This software is provided "as is" without express or implied warranty,
+ and with no claim as to its suitability for any purpose.
+
+Files: vendor/pdalboost/boost/rational.hpp
+ vendor/pdalboost/boost/integer/common_factor_rt.hpp
+Copyright: 1999, 2001-2002, Paul Moore
+                 2001-2002, Daryle Walker
+License: Boost-Paul-Moore
+ Permission to copy, use, modify, sell and distribute this software is granted
+ provided this copyright notice appears in all copies.
+ This software is provided "as is" without express or implied warranty, and
+ with no claim as to its suitability for any purpose.
+
+Files: debian/*
+Copyright: 2016, Bas Couwenberg <sebastic@debian.org>
+License: BSD-3-Clause
+
+License: BSD-3-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ 1) Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+ .
+ 2) Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ 3) Neither the name of the ORGANIZATION nor the names of its contributors may
+    be used to endorse or promote products derived from this software without
+    specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-2-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSL-1.0
+ Boost Software License - Version 1.0 - August 17th, 2003
+ .
+ Permission is hereby granted, free of charge, to any person or organization
+ obtaining a copy of the software and accompanying documentation covered by
+ this license (the "Software") to use, reproduce, display, distribute,
+ execute, and transmit the Software, and to prepare derivative works of the
+ Software, and to permit third-parties to whom the Software is furnished to
+ do so, all subject to the following:
+ .
+ The copyright notices in the Software and this entire statement, including
+ the above license grant, this restriction and the following disclaimer,
+ must be included in all copies of the Software, in whole or in part, and
+ all derivative works of the Software, unless such copies or derivative
+ works are solely in the form of machine-executable object code generated by
+ a source language processor.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+ SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+ FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.
+
+License: Apache-2.0
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+     http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public
+ License version 2.1 can be found in the file
+ `/usr/share/common-licenses/LGPL-2.1'.
+
+License: MPL-2.0
+ Mozilla Public License Version 2.0
+ ==================================
+ .
+ 1. Definitions
+ --------------
+ .
+ 1.1. "Contributor"
+     means each individual or legal entity that creates, contributes to
+     the creation of, or owns Covered Software.
+ .
+ 1.2. "Contributor Version"
+     means the combination of the Contributions of others (if any) used
+     by a Contributor and that particular Contributor's Contribution.
+ .
+ 1.3. "Contribution"
+     means Covered Software of a particular Contributor.
+ .
+ 1.4. "Covered Software"
+     means Source Code Form to which the initial Contributor has attached
+     the notice in Exhibit A, the Executable Form of such Source Code
+     Form, and Modifications of such Source Code Form, in each case
+     including portions thereof.
+ .
+ 1.5. "Incompatible With Secondary Licenses"
+     means
+ .
+     (a) that the initial Contributor has attached the notice described
+         in Exhibit B to the Covered Software; or
+ .
+     (b) that the Covered Software was made available under the terms of
+         version 1.1 or earlier of the License, but not also under the
+         terms of a Secondary License.
+ .
+ 1.6. "Executable Form"
+     means any form of the work other than Source Code Form.
+ .
+ 1.7. "Larger Work"
+     means a work that combines Covered Software with other material, in
+     a separate file or files, that is not Covered Software.
+ .
+ 1.8. "License"
+     means this document.
+ .
+ 1.9. "Licensable"
+     means having the right to grant, to the maximum extent possible,
+     whether at the time of the initial grant or subsequently, any and
+     all of the rights conveyed by this License.
+ .
+ 1.10. "Modifications"
+     means any of the following:
+ .
+     (a) any file in Source Code Form that results from an addition to,
+         deletion from, or modification of the contents of Covered
+         Software; or
+ .
+     (b) any new file in Source Code Form that contains any Covered
+         Software.
+ .
+ 1.11. "Patent Claims" of a Contributor
+     means any patent claim(s), including without limitation, method,
+     process, and apparatus claims, in any patent Licensable by such
+     Contributor that would be infringed, but for the grant of the
+     License, by the making, using, selling, offering for sale, having
+     made, import, or transfer of either its Contributions or its
+     Contributor Version.
+ .
+ 1.12. "Secondary License"
+     means either the GNU General Public License, Version 2.0, the GNU
+     Lesser General Public License, Version 2.1, the GNU Affero General
+     Public License, Version 3.0, or any later versions of those
+     licenses.
+ .
+ 1.13. "Source Code Form"
+     means the form of the work preferred for making modifications.
+ .
+ 1.14. "You" (or "Your")
+     means an individual or a legal entity exercising rights under this
+     License. For legal entities, "You" includes any entity that
+     controls, is controlled by, or is under common control with You. For
+     purposes of this definition, "control" means (a) the power, direct
+     or indirect, to cause the direction or management of such entity,
+     whether by contract or otherwise, or (b) ownership of more than
+     fifty percent (50%) of the outstanding shares or beneficial
+     ownership of such entity.
+ .
+ 2. License Grants and Conditions
+ --------------------------------
+ .
+ 2.1. Grants
+ .
+ Each Contributor hereby grants You a world-wide, royalty-free,
+ non-exclusive license:
+ .
+ (a) under intellectual property rights (other than patent or trademark)
+     Licensable by such Contributor to use, reproduce, make available,
+     modify, display, perform, distribute, and otherwise exploit its
+     Contributions, either on an unmodified basis, with Modifications, or
+     as part of a Larger Work; and
+ .
+ (b) under Patent Claims of such Contributor to make, use, sell, offer
+     for sale, have made, import, and otherwise transfer either its
+     Contributions or its Contributor Version.
+ .
+ 2.2. Effective Date
+ .
+ The licenses granted in Section 2.1 with respect to any Contribution
+ become effective for each Contribution on the date the Contributor first
+ distributes such Contribution.
+ .
+ 2.3. Limitations on Grant Scope
+ .
+ The licenses granted in this Section 2 are the only rights granted under
+ this License. No additional rights or licenses will be implied from the
+ distribution or licensing of Covered Software under this License.
+ Notwithstanding Section 2.1(b) above, no patent license is granted by a
+ Contributor:
+ .
+ (a) for any code that a Contributor has removed from Covered Software;
+     or
+ .
+ (b) for infringements caused by: (i) Your and any other third party's
+     modifications of Covered Software, or (ii) the combination of its
+     Contributions with other software (except as part of its Contributor
+     Version); or
+ .
+ (c) under Patent Claims infringed by Covered Software in the absence of
+     its Contributions.
+ .
+ This License does not grant any rights in the trademarks, service marks,
+ or logos of any Contributor (except as may be necessary to comply with
+ the notice requirements in Section 3.4).
+ .
+ 2.4. Subsequent Licenses
+ .
+ No Contributor makes additional grants as a result of Your choice to
+ distribute the Covered Software under a subsequent version of this
+ License (see Section 10.2) or under the terms of a Secondary License (if
+ permitted under the terms of Section 3.3).
+ .
+ 2.5. Representation
+ .
+ Each Contributor represents that the Contributor believes its
+ Contributions are its original creation(s) or it has sufficient rights
+ to grant the rights to its Contributions conveyed by this License.
+ .
+ 2.6. Fair Use
+ .
+ This License is not intended to limit any rights You have under
+ applicable copyright doctrines of fair use, fair dealing, or other
+ equivalents.
+ .
+ 2.7. Conditions
+ .
+ Sections 3.1, 3.2, 3.3, and 3.4 are conditions of the licenses granted
+ in Section 2.1.
+ .
+ 3. Responsibilities
+ -------------------
+ .
+ 3.1. Distribution of Source Form
+ .
+ All distribution of Covered Software in Source Code Form, including any
+ Modifications that You create or to which You contribute, must be under
+ the terms of this License. You must inform recipients that the Source
+ Code Form of the Covered Software is governed by the terms of this
+ License, and how they can obtain a copy of this License. You may not
+ attempt to alter or restrict the recipients' rights in the Source Code
+ Form.
+ .
+ 3.2. Distribution of Executable Form
+ .
+ If You distribute Covered Software in Executable Form then:
+ .
+ (a) such Covered Software must also be made available in Source Code
+     Form, as described in Section 3.1, and You must inform recipients of
+     the Executable Form how they can obtain a copy of such Source Code
+     Form by reasonable means in a timely manner, at a charge no more
+     than the cost of distribution to the recipient; and
+ .
+ (b) You may distribute such Executable Form under the terms of this
+     License, or sublicense it under different terms, provided that the
+     license for the Executable Form does not attempt to limit or alter
+     the recipients' rights in the Source Code Form under this License.
+ .
+ 3.3. Distribution of a Larger Work
+ .
+ You may create and distribute a Larger Work under terms of Your choice,
+ provided that You also comply with the requirements of this License for
+ the Covered Software. If the Larger Work is a combination of Covered
+ Software with a work governed by one or more Secondary Licenses, and the
+ Covered Software is not Incompatible With Secondary Licenses, this
+ License permits You to additionally distribute such Covered Software
+ under the terms of such Secondary License(s), so that the recipient of
+ the Larger Work may, at their option, further distribute the Covered
+ Software under the terms of either this License or such Secondary
+ License(s).
+ .
+ 3.4. Notices
+ .
+ You may not remove or alter the substance of any license notices
+ (including copyright notices, patent notices, disclaimers of warranty,
+ or limitations of liability) contained within the Source Code Form of
+ the Covered Software, except that You may alter any license notices to
+ the extent required to remedy known factual inaccuracies.
+ .
+ 3.5. Application of Additional Terms
+ .
+ You may choose to offer, and to charge a fee for, warranty, support,
+ indemnity or liability obligations to one or more recipients of Covered
+ Software. However, You may do so only on Your own behalf, and not on
+ behalf of any Contributor. You must make it absolutely clear that any
+ such warranty, support, indemnity, or liability obligation is offered by
+ You alone, and You hereby agree to indemnify every Contributor for any
+ liability incurred by such Contributor as a result of warranty, support,
+ indemnity or liability terms You offer. You may include additional
+ disclaimers of warranty and limitations of liability specific to any
+ jurisdiction.
+ .
+ 4. Inability to Comply Due to Statute or Regulation
+ ---------------------------------------------------
+ .
+ If it is impossible for You to comply with any of the terms of this
+ License with respect to some or all of the Covered Software due to
+ statute, judicial order, or regulation then You must: (a) comply with
+ the terms of this License to the maximum extent possible; and (b)
+ describe the limitations and the code they affect. Such description must
+ be placed in a text file included with all distributions of the Covered
+ Software under this License. Except to the extent prohibited by statute
+ or regulation, such description must be sufficiently detailed for a
+ recipient of ordinary skill to be able to understand it.
+ .
+ 5. Termination
+ --------------
+ .
+ 5.1. The rights granted under this License will terminate automatically
+ if You fail to comply with any of its terms. However, if You become
+ compliant, then the rights granted under this License from a particular
+ Contributor are reinstated (a) provisionally, unless and until such
+ Contributor explicitly and finally terminates Your grants, and (b) on an
+ ongoing basis, if such Contributor fails to notify You of the
+ non-compliance by some reasonable means prior to 60 days after You have
+ come back into compliance. Moreover, Your grants from a particular
+ Contributor are reinstated on an ongoing basis if such Contributor
+ notifies You of the non-compliance by some reasonable means, this is the
+ first time You have received notice of non-compliance with this License
+ from such Contributor, and You become compliant prior to 30 days after
+ Your receipt of the notice.
+ .
+ 5.2. If You initiate litigation against any entity by asserting a patent
+ infringement claim (excluding declaratory judgment actions,
+ counter-claims, and cross-claims) alleging that a Contributor Version
+ directly or indirectly infringes any patent, then the rights granted to
+ You by any and all Contributors for the Covered Software under Section
+ 2.1 of this License shall terminate.
+ .
+ 5.3. In the event of termination under Sections 5.1 or 5.2 above, all
+ end user license agreements (excluding distributors and resellers) which
+ have been validly granted by You or Your distributors under this License
+ prior to termination shall survive termination.
+ .
+ ************************************************************************
+ *                                                                      *
+ *  6. Disclaimer of Warranty                                           *
+ *  -------------------------                                           *
+ *                                                                      *
+ *  Covered Software is provided under this License on an "as is"       *
+ *  basis, without warranty of any kind, either expressed, implied, or  *
+ *  statutory, including, without limitation, warranties that the       *
+ *  Covered Software is free of defects, merchantable, fit for a        *
+ *  particular purpose or non-infringing. The entire risk as to the     *
+ *  quality and performance of the Covered Software is with You.        *
+ *  Should any Covered Software prove defective in any respect, You     *
+ *  (not any Contributor) assume the cost of any necessary servicing,   *
+ *  repair, or correction. This disclaimer of warranty constitutes an   *
+ *  essential part of this License. No use of any Covered Software is   *
+ *  authorized under this License except under this disclaimer.         *
+ *                                                                      *
+ ************************************************************************
+ .
+ ************************************************************************
+ *                                                                      *
+ *  7. Limitation of Liability                                          *
+ *  --------------------------                                          *
+ *                                                                      *
+ *  Under no circumstances and under no legal theory, whether tort      *
+ *  (including negligence), contract, or otherwise, shall any           *
+ *  Contributor, or anyone who distributes Covered Software as          *
+ *  permitted above, be liable to You for any direct, indirect,         *
+ *  special, incidental, or consequential damages of any character      *
+ *  including, without limitation, damages for lost profits, loss of    *
+ *  goodwill, work stoppage, computer failure or malfunction, or any    *
+ *  and all other commercial damages or losses, even if such party      *
+ *  shall have been informed of the possibility of such damages. This   *
+ *  limitation of liability shall not apply to liability for death or   *
+ *  personal injury resulting from such party's negligence to the       *
+ *  extent applicable law prohibits such limitation. Some               *
+ *  jurisdictions do not allow the exclusion or limitation of           *
+ *  incidental or consequential damages, so this exclusion and          *
+ *  limitation may not apply to You.                                    *
+ *                                                                      *
+ ************************************************************************
+ .
+ 8. Litigation
+ -------------
+ .
+ Any litigation relating to this License may be brought only in the
+ courts of a jurisdiction where the defendant maintains its principal
+ place of business and such litigation shall be governed by laws of that
+ jurisdiction, without reference to its conflict-of-law provisions.
+ Nothing in this Section shall prevent a party's ability to bring
+ cross-claims or counter-claims.
+ .
+ 9. Miscellaneous
+ ----------------
+ .
+ This License represents the complete agreement concerning the subject
+ matter hereof. If any provision of this License is held to be
+ unenforceable, such provision shall be reformed only to the extent
+ necessary to make it enforceable. Any law or regulation which provides
+ that the language of a contract shall be construed against the drafter
+ shall not be used to construe this License against a Contributor.
+ .
+ 10. Versions of the License
+ ---------------------------
+ .
+ 10.1. New Versions
+ .
+ Mozilla Foundation is the license steward. Except as provided in Section
+ 10.3, no one other than the license steward has the right to modify or
+ publish new versions of this License. Each version will be given a
+ distinguishing version number.
+ .
+ 10.2. Effect of New Versions
+ .
+ You may distribute the Covered Software under the terms of the version
+ of the License under which You originally received the Covered Software,
+ or under the terms of any subsequent version published by the license
+ steward.
+ .
+ 10.3. Modified Versions
+ .
+ If you create software not governed by this License, and you want to
+ create a new license for such software, you may create and use a
+ modified version of this License if you rename the license and remove
+ any references to the name of the license steward (except to note that
+ such modified license differs from this License).
+ .
+ 10.4. Distributing Source Code Form that is Incompatible With Secondary
+ Licenses
+ .
+ If You choose to distribute Source Code Form that is Incompatible With
+ Secondary Licenses under the terms of this version of the License, the
+ notice described in Exhibit B of this License must be attached.
+ .
+ Exhibit A - Source Code Form License Notice
+ -------------------------------------------
+ .
+   This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ .
+ If it is not possible or desirable to put the notice in a particular
+ file, then You may include the notice in a location (such as a LICENSE
+ file in a relevant directory) where a recipient would be likely to look
+ for such a notice.
+ .
+ You may add additional accurate notices of copyright ownership.
+ .
+ Exhibit B - "Incompatible With Secondary Licenses" Notice
+ ---------------------------------------------------------
+ .
+   This Source Code Form is "Incompatible With Secondary Licenses", as
+   defined by the Mozilla Public License, v. 2.0.
+
+License: JSONCPP
+ The JsonCpp library's source code, including accompanying documentation,
+ tests and demonstration applications, are licensed under the following
+ conditions...
+ .
+ The author (Baptiste Lepilleur) explicitly disclaims copyright in all
+ jurisdictions which recognize such a disclaimer. In such jurisdictions,
+ this software is released into the Public Domain.
+ .
+ In jurisdictions which do not recognize Public Domain property (e.g. Germany as of
+ 2010), this software is Copyright (c) 2007-2010 by Baptiste Lepilleur, and is
+ released under the terms of the MIT License (see below).
+ .
+ In jurisdictions which recognize Public Domain property, the user of this
+ software may choose to accept it either as 1) Public Domain, 2) under the
+ conditions of the MIT License (see below), or 3) under the terms of dual
+ Public Domain/MIT License conditions described here, as they choose.
+ .
+ The MIT License is about as close to Public Domain as a license can get, and is
+ described in clear, concise terms at:
+ .
+    http://en.wikipedia.org/wiki/MIT_License
+ .
+ The full text of the MIT License follows:
+ .
+ ========================================================================
+ Copyright (c) 2007-2010 Baptiste Lepilleur
+ .
+ Permission is hereby granted, free of charge, to any person
+ obtaining a copy of this software and associated documentation
+ files (the "Software"), to deal in the Software without
+ restriction, including without limitation the rights to use, copy,
+ modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ ========================================================================
+ (END LICENSE TEXT)
+ .
+ The MIT license is compatible with both the GPL and commercial
+ software, affording one all of the rights of Public Domain with the
+ minor nuisance of being required to keep the above copyright notice
+ and license text in the source code. Note also that by accepting the
+ Public Domain "license" you can re-license your copy using whatever
+ license you like.
+
+License: Zlib
+ This software is provided 'as-is', without any express or implied warranty.
+ In no event will the authors be held liable for any damages arising from the
+ use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it freely,
+ subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not claim
+    that you wrote the original software. If you use this software in a product,
+    an acknowledgment in the product documentation would be appreciated but is
+    not required.
+ .
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+ .
+ 3. This notice may not be removed or altered from any source distribution.
+
+License: CC-BY-3.0-US
+ http://creativecommons.org/licenses/by/3.0/us/legalcode
+ .
+ THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE
+ COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY
+ COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS
+ AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
+ .
+ BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE
+ BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY BE
+ CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE
+ IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+ .
+ 1. Definitions
+    .
+    "Collective Work" means a work, such as a periodical issue, anthology or
+    encyclopedia, in which the Work in its entirety in unmodified form, along
+    with one or more other contributions, constituting separate and
+    independent works in themselves, are assembled into a collective whole. A
+    work that constitutes a Collective Work will not be considered a
+    Derivative Work (as defined below) for the purposes of this License.
+    .
+    "Derivative Work" means a work based upon the Work or upon the Work and
+    other pre-existing works, such as a translation, musical arrangement,
+    dramatization, fictionalization, motion picture version, sound recording,
+    art reproduction, abridgment, condensation, or any other form in which the
+    Work may be recast, transformed, or adapted, except that a work that
+    constitutes a Collective Work will not be considered a Derivative Work for
+    the purpose of this License. For the avoidance of doubt, where the Work is
+    a musical composition or sound recording, the synchronization of the Work
+    in timed-relation with a moving image ("synching") will be considered a
+    Derivative Work for the purpose of this License.
+    .
+    "Licensor" means the individual, individuals, entity or entities that
+    offers the Work under the terms of this License.
+    .
+    "Original Author" means the individual, individuals, entity or entities who
+    created the Work.
+    .
+    "Work" means the copyrightable work of authorship offered under the terms
+    of this License.
+    .
+    "You" means an individual or entity exercising rights under this License
+    who has not previously violated the terms of this License with respect to
+    the Work, or who has received express permission from the Licensor to
+    exercise rights under this License despite a previous violation.
+    .
+ 2. Fair Use Rights. Nothing in this license is intended to reduce, limit, or
+    restrict any rights arising from fair use, first sale or other limitations
+    on the exclusive rights of the copyright owner under copyright law or other
+    applicable laws.
+    .
+ 3. License Grant. Subject to the terms and conditions of this License,
+    Licensor hereby grants You a worldwide, royalty-free, non-exclusive,
+    perpetual (for the duration of the applicable copyright) license
+    to exercise the rights in the Work as stated below:
+    .
+    to reproduce the Work, to incorporate the Work into one or more Collective
+    Works, and to reproduce the Work as incorporated in the Collective Works;
+    .
+    to create and reproduce Derivative Works provided that any such Derivative
+    Work, including any translation in any medium, takes reasonable steps to
+    clearly label, demarcate or otherwise identify that changes were made to
+    the original Work. For example, a translation could be marked "The original
+    work was translated from English to Spanish," or a modification could
+    indicate "The original work has been modified.";;
+    .
+    to distribute copies or phonorecords of, display publicly, perform
+    publicly, and perform publicly by means of a digital audio transmission the
+    Work including as incorporated in Collective Works;
+    .
+    to distribute copies or phonorecords of, display publicly, perform
+    publicly, and perform publicly by means of a digital audio transmission
+    Derivative Works.
+    .
+    For the avoidance of doubt, where the Work is a musical composition:
+        .
+        Performance Royalties Under Blanket Licenses. Licensor waives the
+        exclusive right to collect, whether individually or, in the event that
+        Licensor is a member of a performance rights society (e.g. ASCAP, BMI,
+        SESAC), via that society, royalties for the public performance or
+        public digital performance (e.g. webcast) of the Work.
+        .
+        Mechanical Rights and Statutory Royalties. Licensor waives the
+        exclusive right to collect, whether individually or via a music rights
+        agency or designated agent (e.g. Harry Fox Agency), royalties for any
+        phonorecord You create from the Work ("cover version") and distribute,
+        subject to the compulsory license created by 17 USC Section 115 of the
+        US Copyright Act (or the equivalent in other jurisdictions).
+        .
+    Webcasting Rights and Statutory Royalties. For the avoidance of doubt,
+    where the Work is a sound recording, Licensor waives the exclusive right to
+    collect, whether individually or via a performance-rights society (e.g.
+    SoundExchange), royalties for the public digital performance (e.g. webcast)
+    of the Work, subject to the compulsory license created by 17 USC Section
+    114 of the US Copyright Act (or the equivalent in other jurisdictions).
+    .
+ The above rights may be exercised in all media and formats whether now known
+ or hereafter devised. The above rights include the right to make such
+ modifications as are technically necessary to exercise the rights in other
+ media and formats. All rights not expressly granted by Licensor are hereby
+ reserved.
+ .
+ 4. Restrictions. The license granted in Section 3 above is expressly made
+    subject to and limited by the following restrictions:
+    .
+    You may distribute, publicly display, publicly perform, or publicly
+    digitally perform the Work only under the terms of this License, and You
+    must include a copy of, or the Uniform Resource Identifier for, this
+    License with every copy or phonorecord of the Work You distribute, publicly
+    display, publicly perform, or publicly digitally perform. You may not offer
+    or impose any terms on the Work that restrict the terms of this License or
+    the ability of a recipient of the Work to exercise the rights granted to
+    that recipient under the terms of the License. You may not sublicense the
+    Work. You must keep intact all notices that refer to this License and to
+    the disclaimer of warranties. When You distribute, publicly display,
+    publicly perform, or publicly digitally perform the Work, You may not
+    impose any technological measures on the Work that restrict the ability of
+    a recipient of the Work from You to exercise the rights granted to that
+    recipient under the terms of the License. This Section 4(a) applies to the
+    Work as incorporated in a Collective Work, but this does not require the
+    Collective Work apart from the Work itself to be made subject to the terms
+    of this License. If You create a Collective Work, upon notice from any
+    Licensor You must, to the extent practicable, remove from the Collective
+    Work any credit as required by Section 4(b), as requested. If You create a
+    Derivative Work, upon notice from any Licensor You must, to the extent
+    practicable, remove from the Derivative Work any credit as required by
+    Section 4(b), as requested.
+    .
+    If You distribute, publicly display, publicly perform, or publicly
+    digitally perform the Work (as defined in Section 1 above) or any
+    Derivative Works (as defined in Section 1 above) or Collective Works (as
+    defined in Section 1 above), You must, unless a request has been made
+    pursuant to Section 4(a), keep intact all copyright notices for the Work
+    and provide, reasonable to the medium or means You are utilizing: (i) the
+    name of the Original Author (or pseudonym, if applicable) if supplied,
+    and/or (ii) if the Original Author and/or Licensor designate another party
+    or parties (e.g. a sponsor institute, publishing entity, journal) for
+    attribution ("Attribution Parties") in Licensor's copyright notice, terms
+    of service or by other reasonable means, the name of such party or parties;
+    the title of the Work if supplied; to the extent reasonably practicable,
+    the Uniform Resource Identifier, if any, that Licensor specifies to be
+    associated with the Work, unless such URI does not refer to the copyright
+    notice or licensing information for the Work; and, consistent with Section
+    3(b) in the case of a Derivative Work, a credit identifying the use of the
+    Work in the Derivative Work (e.g., "French translation of the Work by
+    Original Author," or "Screenplay based on original Work by Original
+    Author"). The credit required by this Section 4(b) may be implemented in
+    any reasonable manner; provided, however, that in the case of a Derivative
+    Work or Collective Work, at a minimum such credit will appear, if a credit
+    for all contributing authors of the Derivative Work or Collective Work
+    appears, then as part of these credits and in a manner at least as
+    prominent as the credits for the other contributing authors. For the
+    avoidance of doubt, You may only use the credit required by this Section
+    for the purpose of attribution in the manner set out above and, by
+    exercising Your rights under this License, You may not implicitly or
+    explicitly assert or imply any connection with, sponsorship or endorsement
+    by the Original Author, Licensor and/or Attribution Parties, as
+    appropriate, of You or Your use of the Work, without the separate, express
+    prior written permission of the Original Author, Licensor and/or
+    Attribution Parties.
+    .
+ 5. Representations, Warranties and Disclaimer
+ .
+ UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS
+ THE WORK AS-IS AND ONLY TO THE EXTENT OF ANY RIGHTS HELD IN THE LICENSED WORK
+ BY THE LICENSOR. THE LICENSOR MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY
+ KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING,
+ WITHOUT LIMITATION, WARRANTIES OF TITLE, MARKETABILITY, MERCHANTIBILITY,
+ FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR
+ OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT
+ DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED
+ WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
+ .
+ 6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN
+    NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL,
+    INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS
+    LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGES.
+ .
+ 7. Termination
+    .
+    This License and the rights granted hereunder will terminate automatically
+    upon any breach by You of the terms of this License. Individuals or
+    entities who have received Derivative Works (as defined in Section 1 above)
+    or Collective Works (as defined in Section 1 above) from You under this
+    License, however, will not have their licenses terminated provided such
+    individuals or entities remain in full compliance with those licenses.
+    Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.
+    .
+    Subject to the above terms and conditions, the license granted here is
+    perpetual (for the duration of the applicable copyright in the Work).
+    Notwithstanding the above, Licensor reserves the right to release the Work
+    under different license terms or to stop distributing the Work at any time;
+    provided, however that any such election will not serve to withdraw this
+    License (or any other license that has been, or is required to be, granted
+    under the terms of this License), and this License will continue in full
+    force and effect unless terminated as stated above.
+    .
+ 8. Miscellaneous
+    .
+    Each time You distribute or publicly digitally perform the Work (as defined
+    in Section 1 above) or a Collective Work (as defined in Section 1 above),
+    the Licensor offers to the recipient a license to the Work on the same
+    terms and conditions as the license granted to You under this License.
+    .
+    Each time You distribute or publicly digitally perform a Derivative Work,
+    Licensor offers to the recipient a license to the original Work on the same
+    terms and conditions as the license granted to You under this License.
+    .
+    If any provision of this License is invalid or unenforceable under
+    applicable law, it shall not affect the validity or enforceability of the
+    remainder of the terms of this License, and without further action by the
+    parties to this agreement, such provision shall be reformed to the minimum
+    extent necessary to make such provision valid and enforceable.
+    .
+    No term or provision of this License shall be deemed waived and no breach
+    consented to unless such waiver or consent shall be in writing and signed
+    by the party to be charged with such waiver or consent.
+    .
+    This License constitutes the entire agreement between the parties with
+    respect to the Work licensed here. There are no understandings, agreements
+    or representations with respect to the Work not specified here. Licensor
+    shall not be bound by any additional provisions that may appear in any
+    communication from You. This License may not be modified without the mutual
+    written agreement of the Licensor and You.
+
