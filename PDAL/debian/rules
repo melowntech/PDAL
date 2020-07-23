@@ -35,18 +35,20 @@ CMAKE_FLAGS =  \
 	dh $@ -Scmake -B$(DEB_BUILDDIR) --with python2 --parallel
 
 override_dh_clean:
-	#if [ -e debian/gtest.config.guess ]; then \
-#		mv debian/gtest.config.guess vendor/gtest/build-aux/config.guess ; \
-#	fi
-#	if [ -e debian/gtest.config.sub ]; then \
-#		mv debian/gtest.config.sub   vendor/gtest/build-aux/config.sub ; \
-#	fi
+	if [ -e debian/gtest.config.guess ]; then \
+		mv debian/gtest.config.guess vendor/gtest/build-aux/config.guess ; \
+	fi
+	if [ -e debian/gtest.config.sub ]; then \
+		mv debian/gtest.config.sub   vendor/gtest/build-aux/config.sub ; \
+	fi
 
 	dh_clean debian/man/*.1
 
 	$(RM) -r doc/html
 
 override_dh_auto_configure:
+	#apply patches
+	patch -p1 < debian/patches/pdal-base-lib-linkage.patch
 	# Don't use outdated autotools helper files
 	#mv src/vendor/gtest/build-aux/config.guess debian/gtest.config.guess
 	#mv src/vendor/gtest/build-aux/config.sub   debian/gtest.config.sub
@@ -101,3 +103,4 @@ override_dh_makeshlibs:
 override_dh_lintian:
 override_dh_installdocs:
 override_dh_installman:
+
