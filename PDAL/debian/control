@@ -1,8 +1,7 @@
 Source: pdal
 Section: science
 Priority: optional
-Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
-Uploaders: Bas Couwenberg <sebastic@debian.org>
+Maintainer: Matyas Hollmann <matyas.hollmann@melowntech.com>
 Build-Depends: debhelper (>= 9),
                dh-python,
                autotools-dev,
@@ -20,6 +19,7 @@ Build-Depends: debhelper (>= 9),
                libhdf5-dev,
                libjs-mathjax,
                libjsoncpp-dev,
+               liblaszip-dev,
                libpq-dev,
                libproj-dev,
                libspatialite-dev,
@@ -36,9 +36,9 @@ Build-Depends: debhelper (>= 9),
                docbook-xsl,
                docbook-xml,
                xsltproc
-Standards-Version: 4.1.1
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-grass/pdal.git
-Vcs-Git: https://anonscm.debian.org/git/pkg-grass/pdal.git
+Standards-Version: 3.9.8
+Vcs-Browser: https://https://github.com/melowntech/PDAL
+Vcs-Git: https://https://github.com/melowntech/PDAL.git
 Homepage: http://pdal.io/
 
 Package: pdal
