@@ -1,3 +1,9 @@
+pdal (1.8.1) unstable; urgency=medium
+
+  * Bumped up version so our package is preferred over default Debian (no .laz support).
+
+ -- Matyas Hollmann <matyas.hollmann@melown.com>  Fri, 07 Aug 2020 15:08:36 +0000
+
 pdal (1.8.0) unstable; urgency=medium
 
   * Initial build of PDAL with LASzip support based on GIT version 1.8.0.
