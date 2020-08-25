@@ -1,3 +1,9 @@
+pdal (1.8.2) unstable; urgency=medium
+
+  * Fixed python plugin and added python support.
+
+ -- Matyas Hollmann <matyas.hollmann@melown.com>  Tue, 25 Aug 2020 14:00:59 +0000
+
 pdal (1.8.1) unstable; urgency=medium
 
   * Bumped up version so our package is preferred over default Debian (no .laz support).
