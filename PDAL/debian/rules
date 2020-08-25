@@ -47,6 +47,10 @@ override_dh_clean:
 		patch -R -p1 < debian/patches/pdal-base-lib-linkage.patch; \
 	fi
 
+	if patch -R -p1 -f --dry-run < debian/patches/require-python-3.patch > /dev/null 2>&1; then \
+		patch -R -p1 < debian/patches/require-python-3.patch; \
+	fi
+
 	dh_clean debian/man/*.1
 
 	$(RM) -r doc/html
@@ -55,6 +59,10 @@ override_dh_auto_configure:
 	#apply patches
 	if patch -p1 -f --dry-run < debian/patches/pdal-base-lib-linkage.patch > /dev/null 2>&1; then \
 		patch -p1 < debian/patches/pdal-base-lib-linkage.patch; \
+	fi
+
+	if patch -p1 -f --dry-run < debian/patches/require-python-3.patch > /dev/null 2>&1; then \
+		patch -p1 < debian/patches/require-python-3.patch; \
 	fi
 	# Don't use outdated autotools helper files
 	#mv src/vendor/gtest/build-aux/config.guess debian/gtest.config.guess
