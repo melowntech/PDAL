@@ -28,15 +28,9 @@ Build-Depends: debhelper (>= 9),
                libwebsocketpp-dev,
                libxml2-dev,
                python3-dev,
-               python3-breathe,
                python3-numpy,
-               python3-sphinx,
-               python3-sphinx-bootstrap-theme,
                rst2pdf,
                zlib1g-dev,
-               docbook2x,
-               docbook-xsl,
-               docbook-xml,
                xsltproc
 Standards-Version: 3.9.8
 Vcs-Browser: https://https://github.com/melowntech/PDAL
