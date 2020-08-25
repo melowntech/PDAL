@@ -32,7 +32,7 @@ CMAKE_FLAGS =  \
 	                     -DWITH_COMPLETION=ON
 
 %:
-	dh $@ -Scmake -B$(DEB_BUILDDIR) --with python2 --parallel
+	dh $@ -Scmake -B$(DEB_BUILDDIR) --parallel
 
 override_dh_clean:
 	if [ -e debian/gtest.config.guess ]; then \
@@ -91,17 +91,10 @@ override_dh_auto_install:
 override_dh_install:
 	dh_install --list-missing
 
-override_dh_python2:
-	dh_python2 -plibpdal-plugin-python
-	dh_numpy -plibpdal-plugin-python
-
 override_dh_makeshlibs:
-	dpkg-gensymbols -plibpdal-util5 -v$(UPSTREAM_VERSION) -Odebian/libpdal-util5.symbols -edebian/libpdal-util5/usr/lib/libpdal_util.so.7
+	dpkg-gensymbols -plibpdal-util7 -v$(UPSTREAM_VERSION) -Odebian/libpdal-util7.symbols -edebian/libpdal-util7/usr/lib/libpdal_util.so.7
 	
-	dpkg-gensymbols -plibpdal-base5 -v$(UPSTREAM_VERSION) -Odebian/libpdal-base5.symbols -edebian/libpdal-base5/usr/lib/libpdal_base.so.7
-
-	#pkgkde-gensymbols -plibpdal-util -v1.8.0 -Osymbols5.amd64 -edebian/libpdal-util5/usr/lib/libpdal_util.so.5
-	#pkgkde-symbolshelper create -o debian/libpdal_util5.symbols -v1.8.0 symbols5.amd64
+	dpkg-gensymbols -plibpdal-base7 -v$(UPSTREAM_VERSION) -Odebian/libpdal-base7.symbols -edebian/libpdal-base7/usr/lib/libpdal_base.so.7
 
 	dh_makeshlibs -- -v$(UPSTREAM_VERSION) -c0
 
