@@ -5,5 +5,5 @@
 	path = PDAL/src
 	url = git@github.com:PDAL/PDAL.git
 [submodule "python-support"]
-	path = python-support
+	path = python-extension/python-support
 	url = git@github.com:PDAL/python.git

@@ -1,0 +1,26 @@
+Source: pdal
+Section: python
+Priority: optional
+Maintainer: Matyas Hollmann <matyas.hollmann@melown.com>
+Build-Depends:
+ debhelper (>= 9),
+ dh-python,
+ python3-all,
+ python3-setuptools,
+ libpdal-base7,
+ libpdal-util7,
+ libpdal-plugins,
+X-Python-Version: >= 3
+Standards-Version: 3.9.8
+Homepage: https://github.com/melowntech/PDAL
+Vcs-Git: https://github.com/melowntech/PDAL.git
+Vcs-Browser: https://github.com/melowntech/PDAL
+
+Package: python3-pdal
+Architecture: any
+Depends:
+ ${python3:Depends},
+ ${shlibs:Depends},
+ python3-pkg-resources
+Provides:${python3:Provides}
+Description: Python PDAL library wrapper

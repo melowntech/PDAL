@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=pdal
+export PYTHONWARNINGS=d
+
+SETUP_PATCH=debian/patches/python-setup.patch 
+%:
+	# apply patch first
+	if patch -p1 -f --dry-run < $(SETUP_PATCH) > /dev/null 2>&1; then \
+		patch -p1 < $(SETUP_PATCH); \
+	fi
+
+	dh $@ --with python3 --buildsystem=pybuild --sourcedirectory=python-support
+
+override_dh_python3:
+	dh_python3 --shebang=/usr/bin/python3
+
+# dont build for python2
+override_dh_python2:
