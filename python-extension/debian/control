@@ -1,4 +1,4 @@
-Source: pdal
+Source: pdal-python-extension
 Section: python
 Priority: optional
 Maintainer: Matyas Hollmann <matyas.hollmann@melown.com>
