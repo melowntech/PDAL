@@ -1,4 +1,5 @@
 Patch to setup.py for build with Python3. 
+
 --- a/python-support/setup.py
 +++ b/python-support/setup.py
 @@ -151,13 +151,13 @@
@@ -17,7 +18,13 @@ Patch to setup.py for build with Python3.
      libraries.append('pdal_plugin_reader_numpy')
  
  if os.name in ['nt']:
-@@ -197,7 +197,7 @@
+@@ -192,12 +192,12 @@
+                                    extra_link_args=extra_link_args,)]
+ if USE_CYTHON and "clean" not in sys.argv:
+     from Cython.Build import cythonize
+-    extensions= cythonize(extensions, language="c++")
++    extensions= cythonize(extensions, language="c++", language_level=3)
+ 
  setup_args = dict(
      name                = 'PDAL',
      version             = str(module_version),
