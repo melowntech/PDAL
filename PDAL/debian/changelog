@@ -1,3 +1,9 @@
+pdal (1.8.3) unstable; urgency=medium
+
+  * Fixed PDAL autoscale when writing LiDAR point clouds (division by 0).
+
+ -- Matyas Hollmann <matyas.hollmann@melown.com>  Sun, 29 Nov 2020 20:12:02 +0000
+
 pdal (1.8.2) unstable; urgency=medium
 
   * Fixed python plugin and added python support.
