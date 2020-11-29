@@ -1,2 +1,3 @@
 require-python-3.patch
 pdal-base-lib-linkage.patch
+pdal-auto-scaling.patch
