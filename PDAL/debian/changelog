@@ -1,3 +1,9 @@
+pdal (1.8.4) unstable; urgency=medium
+
+  * Fixed writing VLR data from Python/Pipeline, backport of issue: n. 2942
+
+ -- Matyas Hollmann <matyas.hollmann@melown.com>  Mon, 25 Jan 2021 10:41:50 +0100
+
 pdal (1.8.3) unstable; urgency=medium
 
   * Fixed PDAL autoscale when writing LiDAR point clouds (division by 0).

@@ -1,3 +1,10 @@
+python-pdal (1.8.4) unstable; urgency=medium
+
+  * Fixed dependency issue (clash with official repo packages).
+  * Adds support write VLR data from Python.
+
+ -- Matyas Hollmann <matyas.hollmann@melown.com>  Mon, 25 Jan 2021 10:57:11 +0100
+
 python-pdal (1.8.2) unstable; urgency=medium
 
   * Renamed debian package to 'python-pdal' to decrease ambiguity (clash with 'pdal').
