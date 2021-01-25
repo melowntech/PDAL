@@ -146,7 +146,7 @@ Depends: libpdal-plugin-faux (= ${binary:Version}),
          libpdal-plugin-greyhound (= ${binary:Version}),
          libpdal-plugin-icebridge (= ${binary:Version}),
          libpdal-plugin-pgpointcloud (= ${binary:Version}),
-         libpdal-plugin-python (= ${binary:Version}),
+         libpdal-plugin-python3 (= ${binary:Version}),
          libpdal-plugin-sqlite (= ${binary:Version}),
          ${misc:Depends}
 Description: Point Data Abstraction Library - plugins
@@ -252,14 +252,15 @@ Description: Point Data Abstraction Library - PostgreSQL PointCloud plugin
  .
  This package contains the PostgreSQL PointCloud plugin.
 
-Package: libpdal-plugin-python
+Package: libpdal-plugin-python3
 Architecture: any
 Multi-Arch: same
 Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Breaks: libpdal-plugin-numpy (<< 1.7.2-2~)
-Replaces: libpdal-plugin-numpy (<< 1.7.2-2~)
+Replaces: libpdal-plugin-numpy (<< 1.7.2-2~),
+          libpdal-plugin-python
 Description: Point Data Abstraction Library - Python plugin
  PDAL is a BSD licensed library for translating and manipulating point
  cloud data of various formats. PDAL can be used to read, write and
@@ -274,7 +275,7 @@ Description: Point Data Abstraction Library - Python plugin
  facilities of PCL, but does not in general attempt to duplicate its
  capabilities.
  .
- This package contains the Python plugin.
+ This package contains the Python3 plugin.
 
 Package: libpdal-plugin-sqlite
 Architecture: any
@@ -298,4 +299,5 @@ Description: Point Data Abstraction Library - SQLite plugin
  capabilities.
  .
  This package contains the SQLite plugin.
+
 

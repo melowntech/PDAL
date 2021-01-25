@@ -7,9 +7,12 @@ Build-Depends:
  dh-python,
  python3-all,
  python3-setuptools,
- libpdal-base7,
- libpdal-util7,
- libpdal-plugins,
+ libpdal-base7 (>= 1.8.4),
+ libpdal-base7 (<< 1.9),
+ libpdal-util7 (>= 1.8.4),
+ libpdal-util7 (<< 1.9),
+ libpdal-plugin-python3 (>= 1.8.4),
+ libpdal-plugin-python3 (<< 1.9),
 X-Python-Version: >= 3
 Standards-Version: 3.9.8
 Homepage: https://github.com/melowntech/PDAL
@@ -24,3 +27,4 @@ Depends:
  python3-pkg-resources
 Provides:${python3:Provides}
 Description: Python PDAL library wrapper
+
