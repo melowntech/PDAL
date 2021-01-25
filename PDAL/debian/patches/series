@@ -1,3 +1,4 @@
 require-python-3.patch
 pdal-base-lib-linkage.patch
+VLRPipeline.patch
 pdal-auto-scaling.patch

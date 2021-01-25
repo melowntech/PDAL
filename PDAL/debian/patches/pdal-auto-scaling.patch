@@ -1,4 +1,4 @@
-Fixed autoscale in PDAL (division by 0).
+Fixed auto-scale issue: https://github.com/PDAL/PDAL/issues/3304
 --- a/src/pdal/Scaling.cpp
 +++ b/src/pdal/Scaling.cpp
 @@ -93,26 +93,33 @@
@@ -6,28 +6,30 @@ Fixed autoscale in PDAL (division by 0).
  
      if (m_xXform.m_offset.m_auto)
 -    {
-         m_xXform.m_offset.m_val = xmin;
+-        m_xXform.m_offset.m_val = xmin;
 -        xmax -= xmin;
 -    }
++	m_xXform.m_offset.m_val = 0.5 * xmin + 0.5 * xmax;
      if (m_yXform.m_offset.m_auto)
 -    {
-         m_yXform.m_offset.m_val = ymin;
+-        m_yXform.m_offset.m_val = ymin;
 -        ymax -= ymin;
 -    }
++	m_yXform.m_offset.m_val = 0.5 * ymin + 0.5 * ymax;
      if (m_zXform.m_offset.m_auto)
--    {
-         m_zXform.m_offset.m_val = zmin;
--        zmax -= zmin;
--    }
++	m_zXform.m_offset.m_val = 0.5 * zmin + 0.5 * zmax;
 +
-     if (m_xXform.m_scale.m_auto)
--        m_xXform.m_scale.m_val = xmax / (std::numeric_limits<int>::max)();
-+    {
++    if (m_xXform.m_scale.m_auto)
+     {
+-        m_zXform.m_offset.m_val = zmin;
+-        zmax -= zmin;
 +        xmax = (std::max)(std::abs(xmax - m_xXform.m_offset.m_val),
 +                          std::abs(xmin - m_xXform.m_offset.m_val));
 +        m_xXform.m_scale.m_val
 +            = xmax ? xmax / (std::numeric_limits<int>::max)() : 1.;
-+    }
+     }
+-    if (m_xXform.m_scale.m_auto)
+-        m_xXform.m_scale.m_val = xmax / (std::numeric_limits<int>::max)();
      if (m_yXform.m_scale.m_auto)
 -        m_yXform.m_scale.m_val = ymax / (std::numeric_limits<int>::max)();
 +    {

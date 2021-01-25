@@ -1,0 +1,345 @@
+Backported fix https://github.com/PDAL/PDAL/pull/2942/commits, write VLR data in pipeline.
+--- a/src/io/LasVLR.cpp
++++ b/src/io/LasVLR.cpp
+@@ -33,6 +33,12 @@
+ ****************************************************************************/
+ 
+ #include "LasVLR.hpp"
++#include <json/json.h>
++#include <limits>
++
++#include <pdal/util/Utils.hpp>
++#include <pdal/PDALUtils.hpp>
++
+ 
+ namespace pdal
+ {
+@@ -56,6 +62,156 @@
+     return in;
+ }
+ 
++std::istream& operator>>(std::istream& in, LasVLR& v)
++{
++    Json::Value root;
++    Json::CharReaderBuilder builder;
++    std::string err;
++    if (!parseFromStream(builder, in, &root, &err))
++    {
++        err = "JSON error: Unable to parse LAS VLR:\n" + err;
++        throw pdal_error(err);
++    }
++
++    // Make sure there isn't stuff in the input stream after the JSON
++    // object.
++    char c;
++    do
++    {
++        in >> c;
++    } while (std::isspace(c));
++    if (!in.eof())
++        throw pdal_error("Invalid characters following LAS VLR JSON object.");
++
++    // We forced an EOF above, so clear the error state.
++    in.clear();
++    if (!root.isObject())
++        throw pdal_error("LAS VLR must be specified as a JSON object.");
++
++    std::string description;
++    std::string b64data;
++    std::string userId;
++    bool doDecode = true;
++    double recordId(std::numeric_limits<double>::quiet_NaN());
++
++    // iterate over all member names
++    for (const std::string& name : root.getMemberNames())
++    {
++        Json::Value& value(root[name]);
++        if (!name.compare("description"))
++        {
++            if (!value.isString())
++                throw pdal_error("LAS VLR description must be specified "
++                    "as a string.");
++            description = value.asString();
++            if (description.size() > 32)
++                throw pdal_error("LAS VLR description must be 32 characters "
++                    "or less.");
++        }
++        else if (!name.compare("record_id"))
++        {
++            if (!value.isDouble())
++                throw pdal_error("LAS VLR record ID must be specified as "
++                    "a number.");
++            recordId = value.asDouble();
++            if (recordId < 0 ||
++                recordId > (std::numeric_limits<uint16_t>::max)() ||
++                recordId != (uint16_t)recordId)
++                throw pdal_error("LAS VLR record ID must be an non-negative "
++                    "integer less than 65536.");
++        }
++        else if (!name.compare("user_id"))
++        {
++            if (!value.isString())
++                throw pdal_error("LAS VLR user ID must be specified "
++                    "as a string.");
++            userId = value.asString();
++            if (userId.size() > 16)
++                throw pdal_error("LAS VLR user ID must be 16 characters "
++                    "or less.");
++        }
++        else if (!name.compare("data"))
++        {
++            if (!value.isString())
++                throw pdal_error("LAS VLR data must be specified as "
++                    "a base64-encoded string.");
++            b64data = value.asString();
++            doDecode = true;
++        }
++        else if (!name.compare("filename")) // read data from file and encode to base64
++        {
++            if (!value.isString())
++                throw pdal_error("LAS VLR filename must be specified as "
++                    "a string.");
++
++            b64data = value.asString();
++            std::istream* dataStream = Utils::openFile(b64data, true);
++            if (!dataStream)
++            {
++                throw pdal_error("Parsing LAS VLR (filename): Unable to open stream for "
++                    "file \"" + b64data + "\"");
++            }
++
++            try
++            {
++                v.m_data = std::vector<uint8_t>((std::istreambuf_iterator<char>(*dataStream)),
++                                                 std::istreambuf_iterator<char>());
++            }
++            catch (...)
++            {
++                Utils::closeFile(dataStream);
++                throw;
++            }
++
++            doDecode = false;
++        }
++        else
++            throw pdal_error("Invalid key '" + name + "' in VLR "
++                "specificiation.");
++    }
++    if (b64data.empty())
++        throw pdal_error("LAS VLR must contain 'data' or 'filename' member.");
++    if (userId.empty())
++        throw pdal_error("LAS VLR must contain 'user_id' member.");
++    if (std::isnan(recordId))
++        recordId = 1;
++
++    v.m_userId = userId;
++    v.m_recordId = recordId;
++    v.m_description = description;
++
++    // dont decode for data coming from a file
++    if (doDecode)
++        v.m_data = Utils::base64_decode(b64data);
++
++    return in;
++}
++
++
++std::istream& operator>>(std::istream& in, ExtLasVLR& v)
++{
++    return (in >> (LasVLR&)v);
++}
++
++
++std::ostream& operator<<(std::ostream& out, const LasVLR& v)
++{
++    const unsigned char *d(reinterpret_cast<const unsigned char *>(v.data()));
++
++    out << "{\n";
++    out << "  \"description\": \"" << v.description() << "\",\n";
++    out << "  \"record_id\": " << v.recordId() << ",\n";
++    out << "  \"user_id\": \"" << v.userId() << "\",\n";
++    out << "  \"data\": \"" <<Utils::base64_encode(d, v.dataLen()) << "\"\n";
++    out << "}\n";
++    return out;
++}
++
++std::ostream& operator<<(std::ostream& out, const ExtLasVLR& v)
++{
++    return (out << (LasVLR&)v);
++}
++
+ 
+ OLeStream& operator<<(OLeStream& out, const LasVLR& v)
+ {
+@@ -97,10 +253,10 @@
+     return out;
+ }
+ 
+-    void LasVLR::write(OLeStream& out, uint16_t recordSig)
+-    {
+-        m_recordSig = recordSig;
+-        out << *this;
+-    }
++void LasVLR::write(OLeStream& out, uint16_t recordSig)
++{
++    m_recordSig = recordSig;
++    out << *this;
++}
+ 
+ } // namespace pdal
+--- a/src/io/LasVLR.hpp
++++ b/src/io/LasVLR.hpp
+@@ -102,6 +102,8 @@
+ 
+     friend ILeStream& operator>>(ILeStream& in, LasVLR& v);
+     friend OLeStream& operator<<(OLeStream& out, const LasVLR& v);
++    friend std::istream& operator>>(std::istream& in, LasVLR& v);
++    friend std::ostream& operator<<(std::ostream& out, const LasVLR& v);
+ 
+ protected:
+     std::string m_userId;
+@@ -124,6 +126,8 @@
+     friend ILeStream& operator>>(ILeStream& in, ExtLasVLR& v);
+     friend OLeStream& operator<<(OLeStream& out,
+         const ExtLasVLR& v);
++    friend std::istream& operator>>(std::istream& in, ExtLasVLR& v);
++    friend std::ostream& operator<<(std::ostream& out, const ExtLasVLR& v);
+ };
+ 
+ } // namespace pdal
+--- a/src/io/LasWriter.cpp
++++ b/src/io/LasWriter.cpp
+@@ -230,28 +230,7 @@
+ {
+     for (const auto& v : m_userVLRs)
+     {
+-        uint16_t recordId(1);
+-        std::string userId("");
+-        std::string description("");
+-        std::string b64data("");
+-        std::string user("");
+-        if (! v.isMember("user_id"))
+-            throw pdal_error("VLR must contain a 'user_id'!");
+-        userId = v["user_id"].asString();
+-
+-        if (!v.isMember("data"))
+-            throw pdal_error("VLR must contain a base64-encoded 'data' member");
+-        b64data = v["data"].asString();
+-
+-        // Record ID should always be no more than 2 bytes.
+-        if (v.isMember("record_id"))
+-            recordId = static_cast<uint16_t>(v["record_id"].asUInt64());
+-
+-        if (v.isMember("description"))
+-            description = v["description"].asString();
+-
+-        std::vector<uint8_t> data = Utils::base64_decode(b64data);
+-        addVlr(userId, recordId, description, data);
++        addVlr(v);
+     }
+ }
+ 
+@@ -563,23 +542,25 @@
+ void LasWriter::addVlr(const std::string& userId, uint16_t recordId,
+    const std::string& description, std::vector<uint8_t>& data)
+ {
+-    if (data.size() > LasVLR::MAX_DATA_SIZE)
++    addVlr(ExtLasVLR(userId, recordId, description, data));
++}
++
++
++/// Add a standard or variable-length VLR depending on the data size.
++/// \param  evlr  VLR to add.
++void LasWriter::addVlr(const ExtLasVLR& evlr)
++{
++    if (evlr.dataLen() > LasVLR::MAX_DATA_SIZE)
+     {
+         if (m_lasHeader.versionAtLeast(1, 4))
+-        {
+-            ExtLasVLR evlr(userId, recordId, description, data);
+-            m_eVlrs.push_back(std::move(evlr));
+-        }
++             m_eVlrs.push_back(std::move(evlr));
+         else
+             throwError("Can't write VLR with user ID/record ID = " +
+-                userId + "/" + std::to_string(recordId) +
++                evlr.userId() + "/" + std::to_string(evlr.recordId()) +
+                 ".  The data size exceeds the maximum supported.");
+     }
+     else
+-    {
+-        LasVLR vlr(userId, recordId, description, data);
+-        m_vlrs.push_back(std::move(vlr));
+-    }
++        m_vlrs.push_back(std::move(evlr));
+ }
+ 
+ /// Delete a VLR from the vlr list.
+--- a/src/io/LasWriter.hpp
++++ b/src/io/LasWriter.hpp
+@@ -130,7 +130,7 @@
+     StringHeaderVal<0> m_offsetZ;
+     MetadataNode m_forwardMetadata;
+     bool m_writePDALMetadata;
+-    Json::Value m_userVLRs;
++    std::vector<ExtLasVLR> m_userVLRs;
+     bool m_firstPoint;
+ 
+     virtual void addArgs(ProgramArgs& args);
+@@ -171,7 +171,8 @@
+     void readyLazPerfCompression();
+     void openCompression();
+     void addVlr(const std::string& userId, uint16_t recordId,
+-        const std::string& description, std::vector<uint8_t>& data);
++                const std::string& description, std::vector<uint8_t>& data);
++    void addVlr(const ExtLasVLR& evlr);
+     void deleteVlr(const std::string& userId, uint16_t recordId);
+     void addGeotiffVlrs();
+     bool addWktVlr();
+--- a/src/pdal/PipelineReaderJSON.cpp
++++ b/src/pdal/PipelineReaderJSON.cpp
+@@ -148,10 +148,15 @@
+         throw pdal_error(err);
+     }
+ 
+-    Json::Value& subtree = root["pipeline"];
+-    if (!subtree)
++    if (root.isObject() && root.isMember("pipeline"))
++    {
++        Json::Value& subtree = root["pipeline"];
++        parsePipeline(subtree);
++    }
++    else if (root.isArray())
++        parsePipeline(root);
++    else
+         throw pdal_error("JSON pipeline: Root element is not a Pipeline");
+-    parsePipeline(subtree);
+ }
+ 
+ 
+@@ -349,12 +354,12 @@
+             continue;
+         }
+ 
+-        if (extractOption(options, name, subnode))
+-            continue;
+-        else if (subnode.isArray())
++        if (subnode.isArray())
+         {
+             for (const Json::Value& val : subnode)
+-                if (!extractOption(options, name, val))
++                if (val.isObject())
++                    options.add(name, val);
++                else if (!extractOption(options, name, val))
+                     throw pdal_error("JSON pipeline: Invalid value type for "
+                         "option list '" + name + "'.");
+         }
+@@ -363,7 +368,7 @@
+             Json::FastWriter w;
+             options.add(name, w.write(subnode));
+         }
+-        else
++        else if(!extractOption(options, name, subnode))
+             throw pdal_error("JSON pipeline: Value of stage option '" +
+                 name + "' cannot be converted.");
+     }
