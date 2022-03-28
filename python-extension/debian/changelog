@@ -1,3 +1,10 @@
+python-pdal (3.0.2+ds-2-mlwn) unstable; urgency=medium
+
+  * Support for PDAL (>= 2.3.0).
+  * Based on the upstream version 3.0.2.
+
+ -- Matyas Hollmann <matyas.hollmann@melown.com>  Mon, 28 Mar 2022 11:57:11 +0200
+
 python-pdal (1.8.4) unstable; urgency=medium
 
   * Fixed dependency issue (clash with official repo packages).
