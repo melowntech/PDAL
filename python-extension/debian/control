@@ -11,6 +11,7 @@ Build-Depends:
  python3-skbuild,
  python3-dev (>= 3.6),
  python3-numpy,
+ pdal (>= 2.3.0),
  libpdal-dev (>= 2.3.0),
  libpdal-plugins (>= 2.3.0),
 X-Python-Version: >= 3.6
@@ -24,7 +25,8 @@ Architecture: any
 Depends:
  ${python3:Depends},
  ${shlibs:Depends},
- ${misc:Depends}
+ ${misc:Depends},
+ pdal (>= 2.3.0),
 Provides:${python3:Provides}
 Description: Python PDAL library wrapper
 

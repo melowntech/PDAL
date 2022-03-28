@@ -1,4 +1,4 @@
-python-pdal (3.0.2+ds-2-mlwn) unstable; urgency=medium
+python-pdal (3.0.2) unstable; urgency=medium
 
   * Support for PDAL (>= 2.3.0).
   * Based on the upstream version 3.0.2.
