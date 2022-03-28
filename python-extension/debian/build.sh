@@ -4,6 +4,7 @@ case "${RELEASE}" in
     jessie) DISTRIBUTION=melown-jessie-backports;;
     stretch) DISTRIBUTION=melown-stretch-backports;;
     buster) DISTRIBUTION=melown-buster-backports;;
+    bullseye) DISTRIBUTION=melown-bullseye-backports;;
 
     xenial) DISTRIBUTION=melown-xenial;;
     yakkety) DISTRIBUTION=melown-yakkety;;
@@ -23,3 +24,4 @@ fi
 
 echo "DISTRIBUTION: ${DISTRIBUTION}"
 dpkg-buildpackage --changes-option=-DDistribution="${DISTRIBUTION}"
+
